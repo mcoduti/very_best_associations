@@ -50,3 +50,5 @@
     </form>
   </div>
 </div>
+
+<%= select_tag(:director_id, options_from_collection_for_select(Director.order("name ASC"), :id, :name, @movie.director_id), :class => "form-control") %>
