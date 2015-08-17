@@ -1,4 +1,7 @@
 class Neighborhood < ActiveRecord::Base
-  validates :name, :presence => true, :uniqueness => {case_sensitive: false}
+
+  has_many :venues
+
+  validates :name, :presence => true, :uniqueness => { :scope => :city, case_sensitive: false}
   validates :city, :presence => true, :uniqueness => {case_sensitive: false}
 end
