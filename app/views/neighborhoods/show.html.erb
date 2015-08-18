@@ -11,6 +11,11 @@
       <dt>City</dt>
       <dd><%= @neighborhood.city %></dd>
 
+      <dt>Venues located here</dt>
+      <% @venues.where({:neighborhood_id => @neighborhood.id }).each do |venue| %>
+      <dd><%= venue.name %></dd>
+            <% end %>
+
     </dl>
 
     <div class="btn-group btn-group-justified">

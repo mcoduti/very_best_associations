@@ -5,6 +5,8 @@ class NeighborhoodsController < ApplicationController
 
   def show
     @neighborhood = Neighborhood.find(params[:id])
+    @neighborhoods = Neighborhood.all
+    @venues = Venue.all
   end
 
   def new

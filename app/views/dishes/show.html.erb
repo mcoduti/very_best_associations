@@ -11,6 +11,12 @@
       <dt>Cuisine</dt>
       <dd><%= @dish.cuisine.name %></dd>
 
+      <dt>Favorited by</dt>
+      <% @favorites.where({ :dish_id => @dish.id}).each do |favorite| %>
+      <dd> <%= @users.find_by({ :id => favorite.user_id}).username %> at <%= @venues.find_by({ :id => favorite.venue_id}).name %></dd>
+      <% end %>
+
+
     </dl>
 
     <div class="btn-group btn-group-justified">
