@@ -5,6 +5,10 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @favorites = Favorite.all
+    @venues = Venue.all
+    @users = User.all
+    @dishes = Dish.all
   end
 
   def new

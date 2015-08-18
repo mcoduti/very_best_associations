@@ -16,6 +16,10 @@
       <dd><%= venue.name %></dd>
             <% end %>
 
+      <dt>Fav's in the neighborhood</dt>
+        <% @neighborhood.favorites.each do |favorite|  %>
+        <dd> <%= favorite.dish.name %> at <%= favorite.venue.name %> </dd>
+        <% end %>
     </dl>
 
     <div class="btn-group btn-group-justified">

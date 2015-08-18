@@ -7,6 +7,10 @@
     <dl class="dl-horizontal">
       <dt>Username</dt>
       <dd><%= @user.username %></dd>
+      <dt>Favorites</dt>
+      <% @user.favorites.each do |favorite|  %>
+      <dd> <%= @dishes.find_by({ :id => favorite.dish_id }).name %> at <%= @venues.find_by({ :id => favorite.venue_id }).name%> </dd>
+      <% end %>
 
     </dl>
 
