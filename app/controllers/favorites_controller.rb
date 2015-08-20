@@ -17,6 +17,12 @@ class FavoritesController < ApplicationController
     # @favorite.dish_id = params[:dish_id]
     # @favorite.venue_id = params[:venue_id]
     # @favorite.notes = params[:notes]
+    @input1 = params["name"]
+    @favorite = Favorite.new
+    @favorite.dish_id = @input1
+
+    @favorite.save
+
 
     respond_to do |format|
       #if @favorite.save
