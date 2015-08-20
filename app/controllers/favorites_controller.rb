@@ -12,17 +12,20 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new
-    @favorite.user_id = params[:user_id]
-    @favorite.dish_id = params[:dish_id]
-    @favorite.venue_id = params[:venue_id]
-    @favorite.notes = params[:notes]
+    # @favorite = Favorite.new
+    # @favorite.user_id = params[:user_id]
+    # @favorite.dish_id = params[:dish_id]
+    # @favorite.venue_id = params[:venue_id]
+    # @favorite.notes = params[:notes]
 
-    if @favorite.save
-      redirect_to "/favorites", :notice => "Favorite created successfully."
-    else
-      render 'new'
-    end
+    respond_to do |format|
+      #if @favorite.save
+        # format.html {redirect_to "/favorites", :notice => "Favorite created successfully."}
+        format.js {render 'create.js.erb'}
+      # else
+      # #   render 'new'
+      # end
+      end
   end
 
   def edit
